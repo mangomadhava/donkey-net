@@ -1,0 +1,11 @@
+Training: 
+
+nohup python run.py --config config/new-moving-gif-128-pretrained.yaml --checkpoint ./moving-gif-ckp.pth.tar --load_weights_only --log_dir ./experiments/single_rec_gt_data\=v3_attn_gen_dmm_disc_multiscale/ --use_dmm_attention --use_generator_attention --use_discriminator_attention > single_multiscale.log & 
+
+Replace with your own options, name, checkpoint and data 
+
+Testing 
+
+python test_kpd_extractor.py --config ./config/new-moving-gif-128-pretrained.yaml --driving_video ./test_data/00298.png --source_image ./test_data/00298_pair.png --checkpoint ./experiments/dual_rec_gt_data\=v3_attn_gen_dmm_disc_multiscale/latest_ckpts/00000099-checkpoint.pth.tar --use_generator_attention --use_generator_attention
+
+(Replace with your own options and images) 
